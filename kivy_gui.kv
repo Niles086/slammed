@@ -1,0 +1,143 @@
+<HomeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Label:
+            text: "Welcome to Slammed, the last game you'll ever want to play"
+            font_size: '24sp'
+            halign: 'center'
+            valign: 'middle'
+        Button:
+            text: 'Enter'
+            font_size: '20sp'
+            on_press: root.enter
+
+<GameSelectionScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Spinner:
+            id: spinner
+            text: 'Menu'
+            values: ['Cast Instructions', 'Kings', 'Drunk Trivia', 'Most Likely To', 'Roulette', 'Would You Rather']
+            size_hint: None, None
+            size: 200, 44
+            on_text: root.show_screen(self, self.text)
+
+<GameScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Label:
+            id: game_label
+            text: 'Game Screen'
+            font_size: '24sp'
+        Button:
+            text: 'Draw Card'
+            font_size: '20sp'
+            on_press: root.draw_card
+        Button:
+            text: 'Back'
+            font_size: '20sp'
+            on_press: root.go_back
+
+<RouletteGameScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Label:
+            text: 'Draw a Card!'
+            font_size: '24sp'
+        Label:
+            id: card_label
+            text: ''
+            font_size: '20sp'
+        Button:
+            text: 'Draw Card'
+            font_size: '20sp'
+            on_press: root.draw_card
+        Button:
+            text: 'Back'
+            font_size: '20sp'
+            on_press: root.go_back
+
+<DrunkTriviaGameScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Label:
+            text: 'Drunk Trivia'
+            font_size: '24sp'
+        Label:
+            id: question_label
+            text: ''
+            font_size: '20sp'
+        Button:
+            text: 'Next Question'
+            font_size: '20sp'
+            on_press: root.next_question
+        Button:
+            text: 'Back'
+            font_size: '20sp'
+            on_press: root.go_back
+
+<MostLikelyGameScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Label:
+            text: 'Most Likely To'
+            font_size: '24sp'
+        Label:
+            id: prompt_label
+            text: ''
+            font_size: '20sp'
+        Button:
+            text: 'Next Prompt'
+            font_size: '20sp'
+            on_press: root.next_prompt
+        Button:
+            text: 'Back'
+            font_size: '20sp'
+            on_press: root.go_back
+
+<WouldYouRatherGameScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Label:
+            text: 'Would You Rather'
+            font_size: '24sp'
+        Label:
+            id: prompt_label
+            text: ''
+            font_size: '20sp'
+        Button:
+            text: 'Next Prompt'
+            font_size: '20sp'
+            on_press: root.next_prompt
+        Button:
+            text: 'Back'
+            font_size: '20sp'
+            on_press: root.go_back
+
+<CastInstructionsScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Label:
+            text: "To cast your screen:\n\nAndroid:\n1. Open the Google Home app and select the device you want to cast your screen to.\n2. Tap the \"Cast my screen\" button.\n\nOr:\n1. Swipe down from the top of your screen to open the Quick Settings panel.\n2. Look for the \"Cast\" or \"Screen Cast\" icon and tap it.\n3. Select the device you want to cast to.\n\niOS:\n1. Swipe down from the upper-right corner of the screen to open the Control Center.\n2. Tap the \"Screen Mirroring\" button.\n3. Select the device you want to cast your screen to from the list."
+            font_size: '16sp'
+            halign: 'left'
+        Button:
+            text: 'Back'
+            font_size: '20sp'
+            on_press: root.go_back
